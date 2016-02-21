@@ -20,22 +20,22 @@ public void setup() {
   //println((int)'a',(int)'b',(int)'z');
   //println((char)97);
 
-  encryptMessage();
-  decryptMessage();
+  encryptMessage(20);
+  decryptMessage(20);
   // println(engToCode(1,"Hey there how are you?"));
 }
 
-public void encryptMessage() {
+public void encryptMessage(int numberOfTimes) {
   String[] toEncryptList = loadStrings("toEncrypt.txt");
   String toEncrypt = toEncryptList[0];
-  String[] encrypted = {engToCode(1,toEncrypt)};
+  String[] encrypted = {engToCode(numberOfTimes,toEncrypt)};
   saveStrings("encrypted.txt", encrypted);
 }
 
-public void decryptMessage() {
+public void decryptMessage(int numberOfTimes) {
   String[] toDecryptList = loadStrings("toDecrypt.txt");
   String toDecrypt = toDecryptList[0];
-  String[] decrypted = {codeToEng(1,toDecrypt)};
+  String[] decrypted = {codeToEng(numberOfTimes,toDecrypt)};
   saveStrings("decrypted.txt", decrypted);
 }
 
